@@ -45,3 +45,22 @@ class SecondBiggestElementOfArray{
 		return secondmax;
 	}
 }
+
+
+class SecondMax{
+	public static void main(String[] args) {
+		int a[]= {2,3,5,1,6,2,7,9,9};
+		System.out.println(solution(a));
+	}
+	static int solution(int a[]) {
+		int max=Integer.MIN_VALUE;
+		int secondmax=Integer.MIN_VALUE;
+		for(int i=0;i<a.length;i++) {
+			if(a[i]>max) {
+				secondmax=max;
+				max=a[i];
+			}
+		}
+		return secondmax;
+	}
+}
