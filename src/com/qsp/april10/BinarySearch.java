@@ -1,5 +1,7 @@
 package com.qsp.april10;
 
+import java.util.Arrays;
+
 public class BinarySearch {
 	public static void main(String[] args) {
 		int a[]= {1,3,4,5,7,8,10,12};
@@ -21,5 +23,25 @@ public class BinarySearch {
 			}
 		}
 		return -1;
+	}
+}
+
+
+class SecondBiggestElementOfArray{
+	public static void main(String[] args) {
+		int a[]= {1,3,4,5,7,8,10,12};
+		System.out.println(solution(a));
+	}
+	static int solution(int a[]) {
+		Arrays.sort(a);
+		int max=a[a.length-1];
+		int secondmax=max;
+		for(int i=a.length-2;i>=0;i--) {
+			if(a[i]!=max) {
+				secondmax=a[i];
+				break;
+			}
+		}
+		return secondmax;
 	}
 }
